@@ -1,0 +1,227 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Welcome to Housing’s documentation! &#8212; Housing 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-housing-s-documentation">
+<h1>Welcome to Housing’s documentation!<a class="headerlink" href="#welcome-to-housing-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+<div class="section" id="configuration-of-project-environment">
+<h2>Configuration of Project Environment<a class="headerlink" href="#configuration-of-project-environment" title="Permalink to this headline">¶</a></h2>
+<p>This package predicts Median House value from housing data. Different models are built and their performance is evaluated.</p>
+</div>
+</div>
+<div class="section" id="overview-on-how-to-use-the-package">
+<h1>Overview on How to use the Package<a class="headerlink" href="#overview-on-how-to-use-the-package" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>The package can be installed by running the following command inside package, the root directory of the package.</dt>
+<dd>pip install -e ./</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>A env.yml file is also provided which can be used to create a new python virtual environment with the required packages installed. Run the following command inside the mypackage, the root directory.</dt>
+<dd>conda env create -f env.yml</dd>
+</dl>
+</li>
+<li>Once the package is installed, the module package can be imported and the functions can be called from it.</li>
+<li>There are 4 functions provided in the package. They are</li>
+</ol>
+<blockquote>
+<div><div class="line-block">
+<div class="line">data_preprocessing()</div>
+<div class="line"><br /></div>
+<div class="line">train_model()</div>
+<div class="line"><br /></div>
+<div class="line">prediction()</div>
+<div class="line"><br /></div>
+<div class="line">score_eval()</div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li>data_preprocessing() creates two datasets housing_prepared and housing_labels which are used for training the model.</li>
+<li>train_model() is used for training three types of model.
+| Linear Model
+|
+| Decision Tree Model
+|
+| Random Forest Model
+|
+All three models are being saved as pickle files.</li>
+<li>prediction() function predicts on test data for all three models.</li>
+<li>score_eval() function displays the Root Mean Square Error for all three models.</li>
+<li>To use the functions import the package and call the functions from it as follows.</li>
+</ol>
+<blockquote>
+<div><div class="line-block">
+<div class="line">import package</div>
+<div class="line"><br /></div>
+<div class="line">package.data_preprocessing()</div>
+<div class="line"><br /></div>
+<div class="line">package.train_model()</div>
+<div class="line"><br /></div>
+<div class="line">package.prediction()</div>
+<div class="line"><br /></div>
+<div class="line">package.score_eval()</div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="11">
+<li>A test is also available , for testing the rmse for each models.</li>
+</ol>
+<blockquote>
+<div><div class="line-block">
+<div class="line">To test the functions, run the below command in the command line from any directory.</div>
+</div>
+<blockquote>
+<div>pytest –pyargs package</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="setup-procedure">
+<h1>Setup procedure<a class="headerlink" href="#setup-procedure" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic simple">
+<li>If python is not installed in your linux system, follow the instructions in the below link to install it.
+<a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html">https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html</a></li>
+<li>To test the package, install the package by following step 1 in “Overview on How to use the Package” section.</li>
+<li>It will be healthy to first create a virtual environment as mentioned in step 2 of “Overview on How to use the Package” section and then install the package.</li>
+<li><dl class="first docutils">
+<dt>If you opted to create a new environment, make sure the virtual environment is successfully created with the required packages by running the following commands in package root directory. Make sure to use this environment only when using the package.</dt>
+<dd>conda activate environment
+python test_install.py</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Once the package is successfully installed, you can import the package into any python project using the command</dt>
+<dd>import package</dd>
+</dl>
+</li>
+<li>For using the functions in the package, you can call the functions from the package as follows</li>
+</ol>
+<blockquote>
+<div><div class="line-block">
+<div class="line">package.data_preprocessing()</div>
+<div class="line"><br /></div>
+<div class="line">package.train_model()</div>
+<div class="line"><br /></div>
+<div class="line">package.prediction()</div>
+<div class="line"><br /></div>
+<div class="line">package.score_eval()</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="welcome-to-median-house-value-s-documentation">
+<h1>Welcome to Median_House_Value’s documentation!<a class="headerlink" href="#welcome-to-median-house-value-s-documentation" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="package-main">
+<h1>package main<a class="headerlink" href="#package-main" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="package-score-eval">
+<h1>package score_eval<a class="headerlink" href="#package-score-eval" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="package-prediction">
+<h1>package prediction<a class="headerlink" href="#package-prediction" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="package-model-score">
+<h1>package model_score<a class="headerlink" href="#package-model-score" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="package-data-preprocessing">
+<h1>package data_preprocessing<a class="headerlink" href="#package-data-preprocessing" title="Permalink to this headline">¶</a></h1>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome to Housing’s documentation!</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a><ul>
+<li><a class="reference internal" href="#configuration-of-project-environment">Configuration of Project Environment</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#overview-on-how-to-use-the-package">Overview on How to use the Package</a></li>
+<li><a class="reference internal" href="#setup-procedure">Setup procedure</a></li>
+<li><a class="reference internal" href="#welcome-to-median-house-value-s-documentation">Welcome to Median_House_Value’s documentation!</a></li>
+<li><a class="reference internal" href="#package-main">package main</a></li>
+<li><a class="reference internal" href="#package-score-eval">package score_eval</a></li>
+<li><a class="reference internal" href="#package-prediction">package prediction</a></li>
+<li><a class="reference internal" href="#package-model-score">package model_score</a></li>
+<li><a class="reference internal" href="#package-data-preprocessing">package data_preprocessing</a></li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Divyansh.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
